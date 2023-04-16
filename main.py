@@ -8,12 +8,14 @@ else:
         print("Compilateur:", *args, **kwargs)
 
 from types import *
+from keyword import remplacer
 
 def get_info(argv:tuple=sys.argv) -> dict:
     data = {"name":"a.out", "files":()}
 
 def compile(data:dict):
     printf("Compilation démarrée")
+    printf(remplacer("Vide"))
     printf("Compilation finie")
 
 
