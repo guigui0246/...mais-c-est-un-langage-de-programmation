@@ -7,8 +7,7 @@ else:
     def printf(*args, **kwargs) -> None:
         print(*args, **kwargs)
 
-from entier import entier
-from flottant import flottant
+from types import *
 
 i = entier(3)
 j = flottant(6)
