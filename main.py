@@ -2,20 +2,21 @@ import sys
 
 if __name__ != "__main__":
     def printf(*args, **kwargs) -> None:
-        print(*args, **kwargs, file=sys.stderr)
+        print("Compilateur:", *args, **kwargs, file=sys.stderr)
 else:
     def printf(*args, **kwargs) -> None:
-        print(*args, **kwargs)
+        print("Compilateur:", *args, **kwargs)
 
 from types import *
 
-i = entier(3)
-j = flottant(6)
-k = i + j
-k = entier(k)
-j = flottant(i)
-j += k
-k = flottant(k)
-j += k
+def get_info(argv:tuple=sys.argv) -> dict:
+    data = {"name":"a.out", "files":()}
 
-printf(j)
+def compile(data:dict):
+    printf("Compilation démarrée")
+    printf("Compilation finie")
+
+
+if __name__ == "__main__":
+    data = get_info()
+    compile(data)

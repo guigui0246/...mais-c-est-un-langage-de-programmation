@@ -11,6 +11,19 @@ class types(object):
         return liste_const(*args, **kwargs)
     def dico(self, *args, **kwargs):
         return dico(*args, **kwargs)
+    def complèxe(self, *args, **kwargs):
+        return complèxe(self, *args, **kwargs)
+    def types(self, *args, **kwargs):
+        return types(self, *args, **kwargs)
+    def groupe(self, *args, **kwargs):
+        return groupe(*args, **kwargs)
+    def groupe_const(self, *args, **kwargs):
+        return groupe_const(*args, **kwargs)
+    def octets(self, *args, **kwargs):
+        return octets(self, *args, **kwargs)
+    def liste_octets(self, *args, **kwargs):
+        return liste_octets(*args, **kwargs)
+
 
 class entier(int):
     def entier(self, *args, **kwargs):
@@ -35,3 +48,23 @@ class liste_const(tuple):
 class dico(dict):
     def dico(self, *args, **kwargs):
         return dico(*args, **kwargs)
+
+class complèxe(complex):
+    def complèxe(self, *args, **kwargs):
+        return complèxe(self, *args, **kwargs)
+
+class groupe(set):
+    def groupe(self, *args, **kwargs):
+        return groupe(*args, **kwargs)
+
+class groupe_const(frozenset):
+    def groupe_const(self, *args, **kwargs):
+        return groupe_const(*args, **kwargs)
+
+class octets(bytes):
+    def octets(self, *args, **kwargs):
+        return octets(self, *args, **kwargs)
+
+class liste_octets(bytearray):
+    def liste_octets(self, *args, **kwargs):
+        return liste_octets(*args, **kwargs)
