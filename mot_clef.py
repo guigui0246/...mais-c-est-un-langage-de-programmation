@@ -63,10 +63,12 @@ liste_replace.append(replace("yield", "renvoyer_générateur"))
 
 
 
-def remplacer(string:str) -> str:
+def remplacer(string:str) -> str | None:
     global liste_replace
     liste = [i(string) for i in liste_replace]
     string = ""
     for i in liste:
         string += i
+    if string == "":
+        return None
     return string

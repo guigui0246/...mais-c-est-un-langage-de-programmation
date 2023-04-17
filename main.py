@@ -7,17 +7,17 @@ else:
     def printf(*args, **kwargs) -> None:
         print("Compilateur:", *args, **kwargs)
 
-from types import *
-from keyword import remplacer
+try:
+    from compile import compile
+except ImportError:
+    pass
 
 def get_info(argv:tuple=sys.argv) -> dict:
-    data = {"name":"a.out", "files":()}
-
-def compile(data:dict):
-    printf("Compilation démarrée")
-    printf(remplacer("Vide"))
-    printf("Compilation finie")
-
+    data = {"name":"a.out", "files":["fic.fr"]}
+    for file in data["files"]:
+        if not file.endswith(".fr"):
+            raise NameError(f"Le nom de fichier \"{file}\" est invalide (doit finir en .fr)")
+    return data
 
 if __name__ == "__main__":
     data = get_info()
