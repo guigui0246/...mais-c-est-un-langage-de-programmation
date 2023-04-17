@@ -12,7 +12,7 @@ try:
 except ImportError:
     pass
 
-def get_info(argv:tuple=sys.argv) -> dict:
+def get_info(argv:tuple[str]=sys.argv) -> dict["name":str, "files":list[str]]:
     data = {"name":"a.out", "files":["fic.fr"]}
     for file in data["files"]:
         if not file.endswith(".fr"):

@@ -22,7 +22,7 @@ def ligne(i : str) -> str:
     del l
     return string
 
-def compile(data:dict):
+def compile(data:dict["files":list[str], "name":str]):
     printf("Compilation démarrée")
     printf(data)
     for file in data["files"]:
