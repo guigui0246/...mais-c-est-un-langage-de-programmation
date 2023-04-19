@@ -1,2 +1,2 @@
-définir lol(str:texte):
+définir main(str:texte):
     remonter ValueError ("Inconnu")

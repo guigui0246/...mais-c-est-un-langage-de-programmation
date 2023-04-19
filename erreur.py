@@ -1,5 +1,5 @@
 try:
-    from keyword import replace
+    from mot_clef import replace
     def add_types(liste_replace:list[replace]) -> list[replace]:
         liste_replace.append(replace("BaseException", "BaseException"))
         liste_replace.append(replace("BaseExceptionGroup", "GroupeBaseException"))

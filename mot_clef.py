@@ -3,17 +3,19 @@ class replace():
         self.str1 = str1
         self.str2 = str2
 
-    def __call__(self, string:str) -> str:
+    def __call__(self, string:str | None=None) -> str | None | list[str, str]:
+        if string == None:
+            return [self.str1, self.str2]
         if string == self.str1:
             return self.str2
         if string == self.str2:
             return self.str1
-        return ""
+        return None
 
 liste_replace = []
 
 try:
-    from types import add_types
+    from types_objet import add_types
     liste_replace = add_types(liste_replace)
 except ModuleNotFoundError:
     import sys
@@ -22,7 +24,7 @@ except ImportError:
     pass
 
 try:
-    from error import add_errors
+    from erreur import add_errors
     liste_replace = add_errors(liste_replace)
 except ModuleNotFoundError:
     import sys
@@ -72,10 +74,13 @@ liste_replace = add_keywords(liste_replace)
 
 def remplacer(string:str) -> str | None:
     global liste_replace
-    liste = [i(string) for i in liste_replace]
-    string = ""
-    for i in liste:
-        string += i
+    for i in liste_replace:
+        l = i()
+        for s in range(len(string)):
+            if string[s:s + len(l[0])] == l[0] and not string[s - 1].isalnum() and not string[s + len(l[0])].isalnum():
+                string = string[:s] + l[1] + string[s + len(l[0]):]
+            elif string[s:s + len(l[1])] == l[1] and not string[s - 1].isalnum() and not string[s + len(l[1])].isalnum():
+                string = string[:s] + l[0] + string[s + len(l[1]):]
     if string == "":
         return None
     return string
