@@ -24,6 +24,15 @@ except ImportError:
     pass
 
 try:
+    from méthodes_préconstruites import add_types
+    liste_replace = add_méthodes(liste_replace)
+except ModuleNotFoundError:
+    import sys
+    print("Méthodes non chargés", file=sys.stderr)
+except ImportError:
+    pass
+
+try:
     from erreur import add_errors
     liste_replace = add_errors(liste_replace)
 except ModuleNotFoundError:
@@ -77,9 +86,9 @@ def remplacer(string:str) -> str | None:
     for i in liste_replace:
         l = i()
         for s in range(len(string)):
-            if string[s:s + len(l[0])] == l[0] and not string[s - 1].isalnum() and not string[s + len(l[0])].isalnum():
+            if string[s:s + len(l[0])] == l[0] and not string[s - 1].isalnum() and not string[s - 1] == '_' and not string[s + len(l[0])].isalnum() and not string[s + len(l[0])] == '_':
                 string = string[:s] + l[1] + string[s + len(l[0]):]
-            elif string[s:s + len(l[1])] == l[1] and not string[s - 1].isalnum() and not string[s + len(l[1])].isalnum():
+            elif string[s:s + len(l[1])] == l[1] and not string[s - 1].isalnum() and not string[s - 1] == '_' and not string[s + len(l[1])].isalnum() and not string[s + len(l[1])] == '_':
                 string = string[:s] + l[0] + string[s + len(l[1]):]
     if string == "":
         return None
