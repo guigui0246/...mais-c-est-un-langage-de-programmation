@@ -1,6 +1,6 @@
 try:
     from mot_clef import replace
-    def add_types(liste_replace:list[replace]) -> list[replace]:
+    def add_erreurs(liste_replace:list[replace]) -> list[replace]:
         liste_replace.append(replace("BaseException", "BaseException"))
         liste_replace.append(replace("BaseExceptionGroup", "GroupeBaseException"))
         liste_replace.append(replace("GeneratorExit", "SortieGenerateur"))
@@ -69,7 +69,7 @@ try:
         liste_replace.append(replace("UserWarning", "AvertissementUtilisateur"))
         return liste_replace
 except ModuleNotFoundError:
-    def add_types(liste_replace:list) -> list:
+    def add_erreurs(liste_replace:list) -> list:
         import sys
         print("Erreurs non chargées", file=sys.stderr)
         return liste_replace

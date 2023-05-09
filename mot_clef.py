@@ -33,8 +33,17 @@ except ImportError:
     pass
 
 try:
-    from erreur import add_errors
-    liste_replace = add_errors(liste_replace)
+    from erreur import add_erreurs
+    liste_replace = add_erreurs(liste_replace)
+except ModuleNotFoundError:
+    import sys
+    print("Erreurs non chargées", file=sys.stderr)
+except ImportError:
+    pass
+
+try:
+    from fonction_a import add_fonctions_a
+    liste_replace = add_fonctions_a(liste_replace)
 except ModuleNotFoundError:
     import sys
     print("Erreurs non chargées", file=sys.stderr)

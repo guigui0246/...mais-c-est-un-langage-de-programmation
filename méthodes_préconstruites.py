@@ -190,7 +190,7 @@ try:
         liste_replace.append(replace("__xor__", "__xou__"))
         return liste_replace
 except ModuleNotFoundError:
-    def add_types(liste_replace:list) -> list:
+    def add_méthodes(liste_replace:list) -> list:
         import sys
-        print("Erreurs non chargées", file=sys.stderr)
+        print("Méthodes non chargées", file=sys.stderr)
         return liste_replace
