@@ -165,16 +165,16 @@ try:
         liste_replace.append(replace("alignment", "alignement"))
         liste_replace.append(replace("alive", "vivant"))
         liste_replace.append(replace("all", "tous"))
-        liste_replace.append(replace("all_errors", "toutes_les_erreurs")
-        liste_replace.append(replace("all_features", "toutes_les_fonctionnalitées")
-        liste_replace.append(replace("all_frames", "tous_les_cadres")
-        liste_replace.append(replace("all_properties", "toutes_les_propriétées")
-        liste_replace.append(replace("all_suffixes", "tous_les_suffixes")
-        liste_replace.append(replace("all_tasks", "toutes_les_tâches")
+        liste_replace.append(replace("all_errors", "toutes_les_erreurs"))
+        liste_replace.append(replace("all_features", "toutes_les_fonctionnalitées"))
+        liste_replace.append(replace("all_frames", "tous_les_cadres"))
+        liste_replace.append(replace("all_properties", "toutes_les_propriétées"))
+        liste_replace.append(replace("all_suffixes", "tous_les_suffixes"))
+        liste_replace.append(replace("all_tasks", "toutes_les_tâches"))
         liste_replace.append(replace("allocate_lock", "allouer_verrou"))
         liste_replace.append(replace("allocfunc", "allouerfonction"))
         liste_replace.append(replace("allow_reuse_address", "autoriser_la_réutilisation_d_adresse"))
-        liste_replace.append(replace("allowed_domains", "domaines_autorisés")
+        liste_replace.append(replace("allowed_domains", "domaines_autorisés"))
         liste_replace.append(replace("alt", "alt"))
         liste_replace.append(replace("ALT_DIGITS", "CHIFFRES_ALT"))
         liste_replace.append(replace("altsep", "séparateuralternatif"))
@@ -219,7 +219,7 @@ try:
         liste_replace.append(replace("__xor__", "__xou__"))
         liste_replace.append(replace("__xor__", "__xou__"))
         liste_replace.append(replace("__xor__", "__xou__"))
-        liste_replace.append(replace("__xor__", "__xou__"))vv
+        liste_replace.append(replace("__xor__", "__xou__"))
         return liste_replace
 except ModuleNotFoundError:
     def add_fonctions_a(liste_replace:list) -> list:
