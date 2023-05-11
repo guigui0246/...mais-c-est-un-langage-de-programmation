@@ -31,6 +31,7 @@ def compile(data:dict["files":list[str], "name":str]):
         except PermissionError:
             printf(f"Permissions manquantes pour {file} ou {file[:-3]}.py")
     with open(data["name"], "w", encoding='utf-8') as f:
+        print(f"\"\"\"Compilé par ...mais-c-est-un-langage-de-programmation de guigui0246\"\"\"", file=f)
         for i in data["files"]:
             print(f"try:\n    from {i[:-3]} import main\nexcept ImportError:\n    pass\n", file=f)
         print("if __name__ == \"__main__\":\n    import sys\n    main(sys.argv)\n", file=f)
