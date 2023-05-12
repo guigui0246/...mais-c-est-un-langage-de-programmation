@@ -1,3 +1,6 @@
+"""Compilé par ...mais-c-est-un-langage-de-programmation de guigui0246"""
+
+
 try:
     from fic import main
 except ImportError:

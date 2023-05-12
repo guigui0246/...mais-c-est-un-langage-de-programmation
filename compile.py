@@ -19,6 +19,7 @@ def compile(data:dict["files":list[str], "name":str]):
         try:
             with open(file, encoding='utf-8') as f:
                 tmp = open(file[:-3] + ".py", "w", encoding='utf-8')
+                print(f"\"\"\"Compilé par ...mais-c-est-un-langage-de-programmation de guigui0246\"\"\"\n\n", file=tmp)
                 del(tmp)
                 string = ""
                 for i in f:
