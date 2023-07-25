@@ -15,6 +15,15 @@ class replace():
 liste_replace = []
 
 try:
+    from custom import add_custom
+    liste_replace = add_custom(liste_replace)
+except ModuleNotFoundError:
+    import sys
+    print("Fonctions custommisées non chargées", file=sys.stderr)
+except ImportError:
+    pass
+
+try:
     from types_objet import add_types
     liste_replace = add_types(liste_replace)
 except ModuleNotFoundError:
@@ -46,7 +55,7 @@ try:
     liste_replace = add_fonctions_a(liste_replace)
 except ModuleNotFoundError:
     import sys
-    print("Erreurs non chargées", file=sys.stderr)
+    print("Fonctions non chargées", file=sys.stderr)
 except ImportError:
     pass
 

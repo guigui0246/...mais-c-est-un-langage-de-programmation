@@ -67,6 +67,11 @@ try:
         liste_replace.append(replace("SyntaxWarning", "AvertissementSyntaxe"))
         liste_replace.append(replace("UnicodeWarning", "AvertissementUnicode"))
         liste_replace.append(replace("UserWarning", "AvertissementUtilisateur"))
+        liste_replace.append(replace("AddressValueError", "ErreurValeurAdresse"))
+        liste_replace.append(replace("AmbiguousOptionError", "ErreurOptionAmbigüe"))
+        liste_replace.append(replace("ArgumentError", "ErreurArgument"))
+        liste_replace.append(replace("ArgumentTypeError", "ErreurTypeArgument"))
+        liste_replace.append(replace("ArithmeticError", "ErreurArithmetique"))
         return liste_replace
 except ModuleNotFoundError:
     def add_erreurs(liste_replace:list) -> list:

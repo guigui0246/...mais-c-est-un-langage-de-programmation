@@ -1,2 +1,3 @@
 définir main(str:texte):
+await
     remonter ValueError ("Inconnu")
